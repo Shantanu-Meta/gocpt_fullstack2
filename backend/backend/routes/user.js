@@ -83,7 +83,7 @@ router.post("/signup", async (req, res) => {
     to: req.body.email,
     subject: "Email Verification",
     html: `<p> Hi ${req.body.firstName}. Please verify your email. </p> 
-    <a href = "${process.env.BACKEND_URL}api/v1/user/verify/${uid}"> Click Here </a>`,
+    <a href = "${process.env.FRONTEND_URL}verify/${uid}"> Click Here </a>`,
   });
 
   res.status(200).json({

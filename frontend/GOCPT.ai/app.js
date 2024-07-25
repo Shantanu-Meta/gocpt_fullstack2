@@ -32,6 +32,9 @@ app.get('/forgot', (req, res) => {
 app.get('/reset/:token', (req, res) => {
   res.sendFile(path.join(__dirname, 'views', 'resetpassword-b.html'));
 });
+app.get('/verify/:token', (req, res) => {
+  res.sendFile(path.join(__dirname, 'views', 'verify.html'));
+});
 app.get('/login', (req, res) => {
   res.sendFile(path.join(__dirname, 'views', 'login.html'));
 });
