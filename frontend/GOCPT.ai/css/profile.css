@@ -1,0 +1,341 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(9, 23, 71, 0.2);
+    padding: 1rem 2rem;
+    padding-bottom: 0.5rem;
+    transition: background-color 0.5s;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0px 15px 0 rgba(0,0,0,0.5);
+}
+header:hover {
+    background-color: rgba(9, 23, 71, 0.5);
+}
+.menu-icon, .profile-icon {
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.site-name {
+    font-size: 1.75rem;
+    font-weight: bold;
+    z-index: 999999;
+}
+.site-name span {
+    color: rgba(9, 23, 71, 1);
+    font-size: 1.75rem;
+    font-weight: bold;
+}
+
+/* Side Menu Styles */
+.side-menu {
+    padding: 0px 0px;
+    display: flex;
+    flex-direction: column;
+    font-size: 2.5rem;
+    justify-content: center;
+    position: fixed;
+    left: -25vw;
+    top: 0;
+    width: 25vw;
+    height: 100vh;
+    background-color: rgba(9, 23, 71, 0.5);
+    color: white;
+    transition: left 0.3s ease;
+    z-index: 10000;
+    backdrop-filter: blur(5px);
+}
+
+.side-menu.opened {
+    left: 0;
+}
+
+.side-menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.side-menu ul li {
+    padding: 1rem 2rem;
+}
+
+.side-menu ul li a {
+    color: white;
+    text-decoration: none;
+    transition-duration: 0.5s;
+    padding-left: 5%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.side-menu ul li a:hover {
+    color: rgba(9, 23, 71, 1);
+    text-decoration: none;
+    border-radius: 10px;
+    padding-right: 30%;
+    box-shadow: inset 0 0 40px rgba(255, 255, 255, 0.8);
+}
+
+.close-icon {
+    position: absolute;
+    top: 1rem;
+    left: 2rem;
+    cursor: pointer;
+    display: none;
+
+}
+
+.close-icon img{
+
+    margin-left:0.5rem;
+    align-self:center;
+    justify-self: center;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: none;
+    transition-duration: 0.5s;
+    padding-left: 500%;
+    padding-top: 50%;
+    padding-bottom: 50%;
+    padding-right: 500%;
+    border-radius: 10px;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+.close-icon img:hover {
+    color: rgba(9, 23, 71, 1);
+    text-decoration: none;
+    border-radius: 10px;
+    box-shadow: inset 0 0 40px rgba(255, 255, 255, 0.8);
+}
+
+/* Profile Content Styles */
+.profile-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 5%;
+}
+
+.profile-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.profile-header h1 {
+    font-size: 2.5rem;
+    color: rgba(9, 23, 71, 1);
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-top: 1rem;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    width: 100%;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.info-title {
+    font-weight: bold;
+    color: rgba(9, 23, 71, 1);
+    font-size: 1.2rem;
+}
+
+.info-value {
+    font-size: 1.2rem;
+}
+/* Progress Bar Styles */
+.progress-bar {
+    width: 100%;
+    background-color: rgba(9, 23, 71, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 1rem;
+    position: relative;
+    height: 30px;
+}
+
+.progress-bar-value {
+    width: 100%;
+    height: 30px;
+    border-radius: 10px;
+    appearance: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.progress-bar-value::-webkit-progress-bar {
+    background-color: rgba(9, 23, 71, 0.2);
+}
+
+.progress-bar-value::-webkit-progress-value {
+    background-color: rgba(9, 23, 71, 1);
+    border-radius: 10px;
+}
+
+.progress-bar-value::-moz-progress-bar {
+    background-color: rgba(9, 23, 71, 1);
+    border-radius: 10px;
+}
+
+.progress-text {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+}
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .side-menu {
+        left: -80vw;
+        width: 80vw;
+    }
+
+    .side-menu.opened {
+        left: 0;
+        width: 80vw;
+    }
+
+    .side-menu ul li a {
+        font-size: 2.5rem;
+    }
+
+    .side-menu ul li a:hover {
+        padding-right: 25%;
+    }
+
+    .profile-content {
+        padding: 2rem 2%;
+    }
+
+    .profile-header h1 {
+        font-size: 2rem;
+    }
+
+    .profile-pic {
+        width: 120px;
+        height: 120px;
+    }
+
+    .info-title, .info-value {
+        font-size: 1rem;
+    }
+    .specifications {
+        flex-direction: column;
+        width: 100%;
+        justify-content: center !important;
+        align-items: center;
+        padding: 0px 0px !important;
+    }
+    .specifications .flexbox{
+        width: 80%;
+    }
+}
+
+
+.specifications {
+    display: flex;
+    justify-content: space-between;
+    padding: 2% 5% ;
+    gap: 5rem;
+    justify-self: center;
+}
+
+.specifications .flexbox {
+    justify-content: center;
+    align-items: center;
+    min-width:44%;
+    max-width: 80%;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 1rem 1rem;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5REM;
+    
+}
+
+.specifications .flexbox h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: rgba(9, 23, 71, 1);;
+}
+
+.specifications .flexbox select,
+.specifications .flexbox button {
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.3rem;
+    width: 80%;
+    font-size: 1.2rem;
+}
+
+.specifications .flexbox select {
+    background-color: white;
+}
+
+.specifications .flexbox button {
+    background-color: rgba(9, 23, 71, 1);
+    color: white;
+    cursor: pointer;
+    padding: 1rem;
+    transition-duration: 0.5S;
+}
+.specifications .flexbox button:hover {
+    background-color: rgba(9, 23, 71, 0.75);
+
+}
+
+.specifications .flexbox .value {
+    font-size: 1rem;
+    border: solid 1px black;
+    width: 80%;
+    border-radius: 5px;
+    padding: 1rem 1rem;
+}
+
+
+footer {
+    position: absolute;
+    padding: 0rem 0rem;
+    text-align: center;
+    width: 100%;
+}

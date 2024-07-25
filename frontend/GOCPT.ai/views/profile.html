@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - GOCPT</title>
+    <link rel="stylesheet" href="../css/profile.css">
+    <link rel="icon" type="image/png" href="../assets/gocptweblogo.png">
+</head>
+<script>
+    function deleteToken(){
+        localStorage.removeItem("user_token");
+    }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script type="module" src="../scripts/profilescript.js"></script>
+
+<body>
+    <header>
+        <div class="menu-icon" id="menu-icon" onclick="toggleMenu()"> <img src="../assets/hamburger.svg" alt="Menu" id="hamburgerIcon"></div>
+        <div class="site-name">GO<span>CPT</span></div>
+        <div class="profile-icon" onclick="openProfile()"><img src="../assets/user.svg" alt="Profile" id="profileIcon"></div>
+    </header>
+    <nav id="side-menu" class="side-menu">
+        <div class="close-icon" id="close-icon" onclick="toggleMenu()"><img src="../assets/cross.svg" alt="Close Menu" id="CrossIcon"></div>
+        <ul>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/profile">Profile</a></li>
+            <li><a href="/feedback">Feedback Form</a></li>
+            <li><a href="/" onclick="deleteToken()">Logout</a></li>
+        </ul>
+    </nav>
+    <div class="profile-content">
+        <div class="profile-header">
+            <h1>User Profile</h1>
+            <img src="../assets/user.svg" alt="User Profile Picture" class="profile-pic">
+        </div>
+        <div class="profile-info">
+            <div class="info-item">
+                <span class="info-title" >Name:</span>
+                <span class="info-value" id="name">John Doe</span>
+            </div>
+            <div class="info-item">
+                <span class="info-title">Email:</span>
+                <span class="info-value" id="email">johndoe@example.com</span>
+            </div>
+            <!-- <div class="info-item">
+                <span class="info-title">Phone No.</span>
+                <span class="info-value">+1 (123) 456 7890</span>
+            </div> -->
+            <!-- <div class="info-item">
+                <span class="info-title">Usage:</span>
+                <span class="info-value">2 out of 10 words used</span>
+            </div>
+            <div class="progress-bar">
+                <progress class="progress-bar-value" max="100" value="20"></progress>
+                <div class="progress-text">20%</div>
+            </div> -->
+        </div>
+    </div>
+    <div class="specifications">
+        <div class="flexbox" id="nep">
+            <h2>CHANGE EMAIL ADDRESS</h2>
+            <div class="value" id="gcpu-value">NEW EMAIL ADDRESS</div>
+            <div class="value" id="nep-value">CONFIRM EMAIL ADDRESS</div>
+            <div class="value" id="nep-value">ENTER PASSWORD</div>
+            <button id="nep-submit">Submit</button>
+            
+        </div>
+        <div class="flexbox" id="gcpu">
+            <h2>CHANGE PASSWORD</h2>
+            <div class="value" id="nep-value">
+            <input type="text" placeholder="Enter new password"   name="password" id="new-password" style="width: 100%; height: 100%;">  
+            </div>
+            <div class="value" id="nep-value">
+                <input type="text" placeholder="Re-enter new password" name="password" id="confirm-password" style="width: 100%; height: 100%;">  
+            </div>
+            <button id="gcpu-submit" type="submit">Submit</button>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-center">
+            &copy; 2024 GOCPT
+        </div>
+    </footer>
+</body>
+<!-- <script type="module" src="../scripts/profilescript.js"></script> -->
+
+</html>

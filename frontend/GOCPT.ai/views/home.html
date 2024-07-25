@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GOCPT-HOME</title>
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="icon" type="image/png" href="../assets/gocptweblogo.png">
+</head>
+<body>
+    <script>
+        function deleteToken(){
+            localStorage.removeItem("user_token");
+        }
+    </script>
+
+    <header>
+        <div class="menu-icon" id="menu-icon"> <img src="../assets/hamburger.svg" alt="Menu" id="hamburgerIcon"></div>
+        <div class="site-name">GO<span>CPT</span></div>
+        <div class="profile-icon" onclick="openProfile()"><img src="../assets/user.svg" alt="Profile" id="profileIcon"></div>
+    </header>
+    <nav id="side-menu" class="side-menu">
+        <div class="close-icon" id="close-icon"><img src="../assets/cross.svg" alt=closemenu" id="CrossIcon"></div>
+        <ul>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/profile">Profile</a></li>
+            <li><a href="/feedback">Feedback Form</a></li>
+            <li><a onclick="deleteToken()"   href="/">Logout</a></li>
+        </ul>
+    </nav>
+    <div class="home-content">
+        <div class="home-content-left">
+            <p>Step 1: Upload your note to generate CPT code.</p>
+            <p>Step 2: Click on generate CPT button to generate CPT code.</p>
+            <p>Step 3: Click on generate MDM CPT code button.</p>
+            <p>Step 4: Next choose an option from list of options.</p>
+            <p>Step 5: Enjoy your Generated CPT code.</p>
+        </div>
+        <div class="home-content-right">
+            <p>Upload your note (It may take 30-90 seconds to generate report)</p>
+            <label for="file-upload" class="file-upload-label"><span>Click to upload a note (pdf or doc file)</span></label>
+            <input type="file" id="file-upload" name="file-upload" accept=".pdf, .doc, .docx">
+            <button id="upload-button">Generate CPT code based upon MDM (Medical Decision Making Model)</button>
+            <p class="warning">*Warning* Before uploading any documents to GoCPT, it is crucial to remove all patient-identifiable information (PII) to comply with privacy laws. Uploading documents with PII may violate HIPAA regulations and result in legal consequences.</p>
+        </div>
+    </div>
+
+    <div class="data">
+        <div class="reports">
+            <!-- Flexboxes for NCPA, ACDRA, RCMMPD -->
+            <div class="flexbox">
+                <h2>Number and Complexity of Problems Addressed =</h2>
+                <div class="value" id="response2">Value from API</div>
+            </div>
+            <div class="flexbox">
+                <h2>Amount and/or Complexity of Data to be Reviewed and Analyzed = </h2>
+                <div class="value" id="response4">Value from API</div>
+            </div>
+            <div class="flexbox">
+                <h2>Risk of Complications and/or Morbidity or Mortality of Patient Management Decisions  = </h2>
+                <div class="value" id="response6">Value from API</div>
+            </div>
+        </div>
+        <div class="mdm-cpt-code">
+            <h2>MDM CPT CODE</h2>
+            <div class="value" id="mdm_value">Value from API</div>
+        </div>
+    </div>
+    
+    <div class="specifications">
+        <div class="flexbox" id="nep">
+            <h2>NEW OR EXISTING PATIENT?</h2>
+            <select id="nep-dropdown">
+                <option value="NEW">NEW</option>
+                <option value="ESTABLISHED">ESTABLISHED</option>
+            </select>
+            <button id="nep-submit">Submit</button>
+            <div class="value" id="nep-value">Value from API</div>
+        </div>
+        <div class="flexbox" id="gcpu">
+            <h2>GET CODE BASED UPON TIME</h2>
+            <select id="gcpu-dropdown">
+                <option value="20 min">20 MIN</option>
+                <option value="30 min">30 MIN</option>
+                <option value="40 min">40 MIN</option>
+                <option value="55 min">55 MIN</option>
+            </select>
+            <button id="gcpu-submit">Submit</button>
+            <div class="value" id="gcpu-value">Value from API</div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-center">
+            &copy; 2024 GOCPT
+        </div>
+    </footer>
+    <script src="../scripts/upload.js"></script>
+    <script src="../scripts/reload.js"></script>
+    <script src="../scripts/homescript.js"></script>
+</body>
+</html>
