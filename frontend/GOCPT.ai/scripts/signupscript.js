@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // Function to handle the sign-up process
 async function signUp(userDetails) {
   try {
-    const response = await axios.post('http://localhost:3000/api/v1/user/signup', userDetails);
+    const response = await axios.post('https://www.gocpt.ai/api/v1/user/signup', userDetails);
 
   alert("Please verify email and signin")
   }

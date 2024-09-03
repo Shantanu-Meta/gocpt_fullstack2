@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 async function signUp(userDetails) {
   try {
-    const response = await axios.post('http://localhost:3000/api/v1/user/signin', userDetails);
+    const response = await axios.post('https://www.gocpt.ai/api/v1/user/signin', userDetails);
   localStorage.setItem("user_token",response.data.token)
   window.location.href = '/home';
 }

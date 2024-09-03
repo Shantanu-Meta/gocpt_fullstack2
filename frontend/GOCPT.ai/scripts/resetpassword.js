@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
 async function resetPassword(userDetails) {
     const token = window.location.pathname.split('/').pop();
     try {
-      const response = await axios.put(`http://localhost:3000/api/v1/user/reset/${token}`,userDetails);
+      const response = await axios.put(`https://www.gocpt.ai/api/v1/user/reset/${token}`,userDetails);
       alert("Reset successful");
 
     } catch (error) {

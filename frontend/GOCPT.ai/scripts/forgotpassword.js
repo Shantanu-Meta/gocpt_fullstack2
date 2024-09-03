@@ -1,6 +1,6 @@
 async function signUp(userDetails) {
     try {
-      const response = await axios.post('http://localhost:3000/api/v1/user/forgot', userDetails);
+      const response = await axios.post('https://www.gocpt.ai/api/v1/user/forgot', userDetails);
       
       alert("Please check your email for forgot password")
     }

@@ -2,7 +2,7 @@ let user
 async function getDetails(){
     try{
         const response=await axios.get(
-            'http://localhost:3000/api/v1/user/me',
+            'https://www.gocpt.ai/api/v1/user/me',
             {
                 headers:{
                     Authorization:"Bearer "+localStorage.getItem("user_token")
@@ -22,7 +22,7 @@ async function getDetails(){
 async function changePassword(userPassword){
     try{
         const response=await axios.put(
-            'http://localhost:3000/api/v1/user/update',
+            'https://www.gocpt.ai/api/v1/user/update',
             userPassword,
             {
                 headers:{

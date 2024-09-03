@@ -10,7 +10,7 @@ document.getElementById("upload-button").addEventListener("click", async functio
     const token = localStorage.getItem("user_token"); // Replace with the actual JWT token
   
     try {
-      const response = await fetch("http://localhost:3000/api/v1/account/upload", {
+      const response = await fetch("https://www.gocpt.ai/api/v1/account/upload", {
         method: "POST",
         headers: {
           "Authorization": `Bearer ${token}`
@@ -39,7 +39,7 @@ document.getElementById("upload-button").addEventListener("click", async functio
     const token = localStorage.getItem("user_token"); // Replace with the actual JWT token
 
     try {
-      const response = await fetch("http://localhost:3000/api/v1/account/code1", {
+      const response = await fetch("https://www.gocpt.ai/api/v1/account/code1", {
         method: "POST",
         headers: {
           "Authorization": `Bearer ${token}`,
@@ -63,7 +63,7 @@ document.getElementById("upload-button").addEventListener("click", async functio
     const token = localStorage.getItem("user_token"); // Replace with the actual JWT token
 
     try {
-      const response = await fetch("http://localhost:3000/api/v1/account/code2", {
+      const response = await fetch("https://www.gocpt.ai/api/v1/account/code2", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
