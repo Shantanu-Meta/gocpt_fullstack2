@@ -8,8 +8,8 @@ const nodemailer = require("nodemailer");
 
 const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
-  port: 587,
-  secure: false,
+  port: 465,
+  secure: true,
   auth: {
     user: process.env.EMAIL,
     pass: process.env.PASSWORD,
@@ -78,8 +78,9 @@ router.post("/signup", async (req, res) => {
     token: uid,
   });
 
+
   await transporter.sendMail({
-    from: '"NexaWings" <nexawingsenterprises@gmail.com>',
+    from: '"GoCPT.ai" <hello.gocpt@gmail.com>',
     to: req.body.email,
     subject: "Email Verification",
     html: `<p> Hi ${req.body.firstName}. Please verify your email. </p> 
@@ -184,7 +185,7 @@ router.post("/forgot", async (req, res) => {
     });
   } else {
     await transporter.sendMail({
-      from: '"NexaWings" <nexawingsenterprises@gmail.com>',
+      from: '"GoCPT.ai" <hello.gocpt@gmail.com>',
       to: req.body.email,
       subject: "Reset Password",
       html: `<p> Hi ${user.firstName}. Please use the link to reset password. </p> 
@@ -242,7 +243,7 @@ router.post("/resend", async (req, res) => {
     });
   } else {
     await transporter.sendMail({
-      from: '"NexaWings" <nexawingsenterprises@gmail.com>',
+      from: '"GoCPT.ai" <hello.gocpt@gmail.com>',
       to: req.body.email,
       subject: "Email Verification",
       html: `<p> Hi ${user.firstName}. Please verify your email. </p> 

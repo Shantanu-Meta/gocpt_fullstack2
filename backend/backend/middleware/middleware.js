@@ -1,4 +1,8 @@
 const jwt = require("jsonwebtoken");
+const express = require("express");
+const app = express();
+
+app.use(express.json()); // Middleware to parse JSON
 
 const authMiddleware = (req, res, next) => {
   const authHeader = req.headers.authorization;
